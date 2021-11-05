@@ -27,7 +27,18 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'plan'
     ];
+
+    /**
+     * User has many links
+     * 
+     * @return HasMany
+     */
+    public function links()
+    {
+        return $this->hasMany(Link::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
